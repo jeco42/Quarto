@@ -119,9 +119,10 @@ public class GameActivity extends ActionBarActivity {
     }
 
     private void loadState(String state){
-        //reset the board
-        newGame();
+        newGame();         //reset the board first
+        mGame.loadState(state); //load state into the gameLogic object
 
+        //Set board and picture pieces to reflect the state
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 Character c = state.charAt(i*4+j);

@@ -9,10 +9,11 @@ public class gameLogic {
                                 106, 105, 102, 101,
                                 90,   89,  86,  85};
 
-    boolean[] played;
-    int[][] board;
-    int gameover;
-    int round;
+    private boolean[] played;
+    private int[][] board;
+    private int gameover;
+    private int round;
+    private String state;
 
     public gameLogic(){
         played = new boolean[16];
@@ -39,6 +40,7 @@ public class gameLogic {
         played[p] = true;
         board[r][c] = pieces[p];
         round++;
+        saveState();
         return true;
     }
 
@@ -93,7 +95,7 @@ public class gameLogic {
     }
 
     public String saveState(){
-        String state = "";
+        state = "";
 
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
@@ -106,6 +108,10 @@ public class gameLogic {
             }
         }
 
+        return state;
+    }
+
+    public String getCurrentState(){
         return state;
     }
 
