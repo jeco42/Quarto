@@ -5,159 +5,141 @@
               android:orientation="vertical"
               android:weightSum="100">
 
-    <GridLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="50"
-        android:id="@+id/board_grid"
-        android:columnCount="4"
-        android:rowCount="4">
+        android:weightSum="4"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
 
-        <ImageView
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/square0"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"
-            android:src="@mipmap/testpiece"/>
+            android:weightSum="4"
+            android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square1"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square2"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton2"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square3"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton3"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square4"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton4"
+                android:layout_weight="1"/>
+        </TableRow>
 
-        <ImageView
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/square5"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            android:weightSum="4"
+            android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square6"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton5"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square7"
-            android:layout_row="1"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton6"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square8"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton7"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square9"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton8"
+                android:layout_weight="1"/>
+        </TableRow>
 
-        <ImageView
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/square10"
-            android:layout_row="2"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            android:weightSum="4"
+            android:layout_weight="1">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square11"
-            android:layout_row="2"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton9"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square12"
-            android:layout_row="3"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton10"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square13"
-            android:layout_row="3"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton11"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/square14"
-            android:layout_row="3"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton12"
+                android:layout_weight="1"/>
+        </TableRow>
 
-        <ImageView
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/square15"
-            android:layout_row="3"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-    </GridLayout>
+            android:weightSum="4"
+            android:layout_weight="1">
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton13"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton14"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton15"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton16"
+                android:layout_weight="1"/>
+        </TableRow>
+
+    </TableLayout>
 
     <LinearLayout
         android:orientation="horizontal"
@@ -178,7 +160,7 @@
         <ImageView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView"
+            android:id="@+id/current_piece"
             android:layout_weight="1"/>
 
         <Button
@@ -194,163 +176,132 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/turn"
-        android:id="@+id/turn_textView"
+        android:id="@+id/turn"
         android:layout_weight="5"
         android:layout_gravity="center_horizontal"/>
 
-    <GridLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:columnCount="4"
-        android:rowCount="4"
-        android:layout_weight="25">
+        android:layout_weight="25"
+        android:weightSum="2"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
 
-        <ImageView
-            android:layout_width="0dp"
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/piece0"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"
-            android:src="@mipmap/testpiece"/>
+            android:layout_weight="1"
+            android:weightSum="8">
 
-        <ImageView
-            android:layout_width="0dp"
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton17"
+                android:layout_weight="1"
+                android:layout_marginTop="5dp"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton18"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton19"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton20"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton21"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton22"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton23"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton24"
+                android:layout_weight="1"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:id="@+id/piece1"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            android:layout_weight="1"
+            android:weightSum="8">
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece2"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton25"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece3"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton26"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece4"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton27"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece5"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton28"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece6"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton29"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece7"
-            android:layout_row="1"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton30"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece8"
-            android:layout_row="2"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton31"
+                android:layout_weight="1"/>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece9"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
+            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/imageButton32"
+                android:layout_weight="1"/>
+        </TableRow>
 
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece10"
-            android:layout_row="2"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece11"
-            android:layout_row="2"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece12"
-            android:layout_row="3"
-            android:layout_column="0"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece13"
-            android:layout_row="3"
-            android:layout_column="1"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece14"
-            android:layout_row="3"
-            android:layout_column="2"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:id="@+id/piece15"
-            android:layout_row="3"
-            android:layout_column="3"
-            android:layout_columnWeight="25"
-            android:layout_rowWeight="25"/>
-
-
-    </GridLayout>
+    </TableLayout>
 
 </LinearLayout>

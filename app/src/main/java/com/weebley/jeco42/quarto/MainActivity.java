@@ -1,17 +1,41 @@
 package com.weebley.jeco42.quarto;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    private Button mPlayButton;
+    private Button mStatsButton;
+
+    private void launchGame(){
+        Intent i = new Intent(MainActivity.this, GameActivity.class);
+        finish();
+        startActivity(i);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mPlayButton = (Button)findViewById(R.id.play_button);
+        mStatsButton = (Button)findViewById(R.id.stats_button);
+
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchGame();
+            }
+        });
+
     }
 
 
