@@ -23,6 +23,7 @@ public class gameLogic {
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
                 board[i][j] = 0;
+                played[i*4+j] = false;
             }
         }
     }
@@ -62,6 +63,50 @@ public class gameLogic {
 
     public boolean canGive(int p){
         return !played[p];
+    }
+
+    public void loadState(String s){
+        //reset game to new state
+        round = 0;
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                board[i][j] = 0;
+                played[i*4+j] = false;
+            }
+        }
+
+        //fill in board
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                if(s.charAt(i*4+j) != '_'){
+                    board[i][j] = (int)(s.charAt(i*4+j)) + 48;
+                    played[i*4+j] = true;
+                    round++;
+                }
+                else{
+                    board[i][j] = 0;
+                }
+            }
+        }
+
+
+    }
+
+    public String saveState(){
+        String state = "";
+
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                if(board[i][j] != 0){
+                    state += (char)(board[i][j] - 48);
+                }
+                else{
+                    state += "_";
+                }
+            }
+        }
+
+        return state;
     }
 
 }

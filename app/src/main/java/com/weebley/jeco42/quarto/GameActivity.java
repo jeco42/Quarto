@@ -8,6 +8,8 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 /**
  * Created by Justin on 4/3/2015.
  */
@@ -25,6 +27,7 @@ public class GameActivity extends ActionBarActivity {
     private int[] mPieceImages;
     private int[] mTurnMessages;
     private int row, col, piece, turn;
+    private HashMap<Character, Integer> mPMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class GameActivity extends ActionBarActivity {
         mPieceButtons = new ImageButton[16];
         mPieceImages = new int[16];
         mTurnMessages = new int[4];
+        mPMap = new HashMap<Character, Integer>();
 
         mBoardButtons[0][0] = (ImageButton)findViewById(R.id.imageButton);      mBoardButtons[0][1] = (ImageButton)findViewById(R.id.imageButton2);
         mBoardButtons[0][2] = (ImageButton)findViewById(R.id.imageButton3);     mBoardButtons[0][3] = (ImageButton)findViewById(R.id.imageButton4);
@@ -64,6 +68,11 @@ public class GameActivity extends ActionBarActivity {
         mPieceImages[12] = R.drawable.piece12;  mPieceImages[13] = R.drawable.piece13;  mPieceImages[14] = R.drawable.piece14;  mPieceImages[15] = R.drawable.piece15;
 
         mTurnMessages[0] = R.string.p1turnGive; mTurnMessages[1] = R.string.p2turnPlace; mTurnMessages[2] = R.string.p2turnGive; mTurnMessages[3] = R.string.p1turnPlace;
+
+        mPMap.put('z', 0); mPMap.put('y', 1); mPMap.put('v', 2); mPMap.put('u', 3);
+        mPMap.put('j', 4); mPMap.put('i', 5); mPMap.put('f', 6); mPMap.put('e', 7);
+        mPMap.put(':', 8); mPMap.put('9', 9); mPMap.put('6', 10); mPMap.put('5', 11);
+        mPMap.put('*', 12); mPMap.put(')', 13); mPMap.put('&', 14); mPMap.put('%', 15);
 
         mGiveButton.setText(R.string.give);
         mPlaceButton.setText(R.string.place);
@@ -107,6 +116,22 @@ public class GameActivity extends ActionBarActivity {
         mGame = new gameLogic();
         turn = 0;
         newGame();
+    }
+
+    private void loadState(String state){
+        //reset the board
+        newGame();
+
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                Character c = state.charAt(i*4+j);
+                if(c != '_') {
+                    mBoardButtons[i][j].setImageResource(mPieceImages[mPMap.get(c)]);
+                    mPieceButtons[i*4+j].setImageResource(R.drawable.blank);
+                    toggleTurn();
+                }
+            }
+        }
     }
 
     private void enablePieceSelection(){
