@@ -2,11 +2,13 @@ package com.weebley.jeco42.quarto;
 
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.HashMap;
 
@@ -17,7 +19,7 @@ public class GameActivity extends ActionBarActivity {
 
     private gameLogic mGame;
 
-    private ImageButton[][] mBoardButtons;
+    private ImageView[][] mBoardButtons;
     private ImageButton[] mPieceButtons;
     private Button mGiveButton;
     private Button mPlaceButton;
@@ -38,20 +40,20 @@ public class GameActivity extends ActionBarActivity {
         mPlaceButton = (Button)findViewById(R.id.place_button);
         mCurrentPieceView = (ImageView)findViewById(R.id.current_piece);
         mTurnView = (TextView)findViewById(R.id.turn);
-        mBoardButtons = new ImageButton[4][4];
+        mBoardButtons = new ImageView[4][4];
         mPieceButtons = new ImageButton[16];
         mPieceImages = new int[16];
         mTurnMessages = new int[4];
         mPMap = new HashMap<Character, Integer>();
 
-        mBoardButtons[0][0] = (ImageButton)findViewById(R.id.imageButton);      mBoardButtons[0][1] = (ImageButton)findViewById(R.id.imageButton2);
-        mBoardButtons[0][2] = (ImageButton)findViewById(R.id.imageButton3);     mBoardButtons[0][3] = (ImageButton)findViewById(R.id.imageButton4);
-        mBoardButtons[1][0] = (ImageButton)findViewById(R.id.imageButton5);     mBoardButtons[1][1] = (ImageButton)findViewById(R.id.imageButton6);
-        mBoardButtons[1][2] = (ImageButton)findViewById(R.id.imageButton7);     mBoardButtons[1][3] = (ImageButton)findViewById(R.id.imageButton8);
-        mBoardButtons[2][0] = (ImageButton)findViewById(R.id.imageButton9);     mBoardButtons[2][1] = (ImageButton)findViewById(R.id.imageButton10);
-        mBoardButtons[2][2] = (ImageButton)findViewById(R.id.imageButton11);    mBoardButtons[2][3] = (ImageButton)findViewById(R.id.imageButton12);
-        mBoardButtons[3][0] = (ImageButton)findViewById(R.id.imageButton13);    mBoardButtons[3][1] = (ImageButton)findViewById(R.id.imageButton14);
-        mBoardButtons[3][2] = (ImageButton)findViewById(R.id.imageButton15);    mBoardButtons[3][3] = (ImageButton)findViewById(R.id.imageButton16);
+        mBoardButtons[0][0] = (ImageView)findViewById(R.id.imageButton);      mBoardButtons[0][1] = (ImageView)findViewById(R.id.imageButton2);
+        mBoardButtons[0][2] = (ImageView)findViewById(R.id.imageButton3);     mBoardButtons[0][3] = (ImageView)findViewById(R.id.imageButton4);
+        mBoardButtons[1][0] = (ImageView)findViewById(R.id.imageButton5);     mBoardButtons[1][1] = (ImageView)findViewById(R.id.imageButton6);
+        mBoardButtons[1][2] = (ImageView)findViewById(R.id.imageButton7);     mBoardButtons[1][3] = (ImageView)findViewById(R.id.imageButton8);
+        mBoardButtons[2][0] = (ImageView)findViewById(R.id.imageButton9);     mBoardButtons[2][1] = (ImageView)findViewById(R.id.imageButton10);
+        mBoardButtons[2][2] = (ImageView)findViewById(R.id.imageButton11);    mBoardButtons[2][3] = (ImageView)findViewById(R.id.imageButton12);
+        mBoardButtons[3][0] = (ImageView)findViewById(R.id.imageButton13);    mBoardButtons[3][1] = (ImageView)findViewById(R.id.imageButton14);
+        mBoardButtons[3][2] = (ImageView)findViewById(R.id.imageButton15);    mBoardButtons[3][3] = (ImageView)findViewById(R.id.imageButton16);
 
         mPieceButtons[0] = (ImageButton)findViewById(R.id.imageButton17);   mPieceButtons[1] = (ImageButton)findViewById(R.id.imageButton18);
         mPieceButtons[2] = (ImageButton)findViewById(R.id.imageButton19);   mPieceButtons[3] = (ImageButton)findViewById(R.id.imageButton20);
