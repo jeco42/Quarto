@@ -106,7 +106,7 @@ public class GameActivity extends ActionBarActivity {
                         row = innerI;
                         col = innerJ;
                         //EXPERIMENTING WITH HIGHLIGHTING SELECTED SQUARE
-                        mBoardButtons[innerI][innerJ].getDrawable().setColorFilter(Color.parseColor("#B7B2B0"), PorterDuff.Mode.DARKEN);
+                        mBoardButtons[innerI][innerJ].setColorFilter(Color.parseColor("#FFFF33"), PorterDuff.Mode.DARKEN);
 
                         Timer t = new Timer();
                         t.schedule(new TimerTask() {
@@ -116,7 +116,7 @@ public class GameActivity extends ActionBarActivity {
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
-                                        mBoardButtons[innerI][innerJ].getDrawable().clearColorFilter();
+                                        mBoardButtons[innerI][innerJ].clearColorFilter();
                                     }
                                 });
                             }
