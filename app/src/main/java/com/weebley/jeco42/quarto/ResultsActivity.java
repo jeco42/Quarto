@@ -1,5 +1,6 @@
 package com.weebley.jeco42.quarto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -21,8 +22,7 @@ public class ResultsActivity extends ActionBarActivity{
     private int mWinner, index, numMoves;
     private String moveHistory;
     private TextView mWinnerTextview;
-    private Button mPrevButton;
-    private Button mNextButton;
+    private Button mPrevButton, mNextButton, mRematchButton, mQuitButton;
     private ImageView[][] mBoard;
     private HashMap<Character, Integer> mPMap;
     private int[] mPieceImages;
@@ -45,6 +45,8 @@ public class ResultsActivity extends ActionBarActivity{
         mWinnerTextview = (TextView)findViewById(R.id.winnerTextview);
         mPrevButton = (Button)findViewById(R.id.prev);
         mNextButton = (Button)findViewById(R.id.next);
+        mRematchButton = (Button)findViewById(R.id.rematch);
+        mQuitButton = (Button)findViewById(R.id.quit);
 
         //The board imageviews
         mBoard[0][0] = (ImageView)findViewById(R.id.imageView);      mBoard[0][1] = (ImageView)findViewById(R.id.imageView2);
@@ -83,6 +85,20 @@ public class ResultsActivity extends ActionBarActivity{
             }
         });
 
+        mRematchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rematch();
+            }
+        });
+
+        mQuitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                quit();
+            }
+        });
+
         if(mWinner == 1) {
             mWinnerTextview.setText(R.string.p1wins);
         }
@@ -115,6 +131,18 @@ public class ResultsActivity extends ActionBarActivity{
                     mBoard[i][j].setImageResource(R.drawable.blank);
             }
         }
+    }
+
+    private void rematch() {
+        Intent i = new Intent(ResultsActivity.this, GameActivity.class);
+        finish();
+        startActivity(i);
+    }
+
+    private void quit(){
+        Intent i = new Intent(ResultsActivity.this, MainActivity.class);
+        finish();
+        startActivity(i);
     }
 
 

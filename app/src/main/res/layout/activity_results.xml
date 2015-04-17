@@ -10,14 +10,43 @@
         android:layout_height="wrap_content"
         android:text="@string/p1wins"
         android:id="@+id/winnerTextview"
-        android:layout_weight="0.09"/>
+        android:layout_weight="0.09"
+        android:autoText="false"
+        android:textSize="60dp"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rematch"
+            android:id="@+id/rematch"
+            android:textSize="25dp"
+            android:padding="20dp"
+            android:layout_margin="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"
+            android:id="@+id/quit"
+            android:textSize="25dp"
+            android:padding="20dp"
+            android:layout_margin="20dp"/>
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center_vertical"
-        android:layout_weight="0.38">
+        android:layout_weight="0.24">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -394,25 +423,44 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/horizontalbarr"/>
         </LinearLayout>
+
     </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/history"
+        android:id="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textSize="40dp"
+        android:textIsSelectable="true"/>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
         android:layout_height="80dp"
-        android:layout_weight="0.02">
+        android:layout_weight="0.02"
+        android:layout_gravity="left|center"
+        android:gravity="center">
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/previous"
-            android:id="@+id/prev"/>
+            android:id="@+id/prev"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:layout_margin="20dp"/>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/next"
-            android:id="@+id/next"/>
+            android:id="@+id/next"
+            android:textSize="30dp"
+            android:layout_margin="20dp"/>
     </LinearLayout>
 
 </LinearLayout>
