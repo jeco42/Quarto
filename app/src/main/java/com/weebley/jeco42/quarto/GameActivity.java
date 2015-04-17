@@ -28,7 +28,8 @@ public class GameActivity extends ActionBarActivity {
 
     private int[] mPieceImages;
     private int[] mTurnMessages;
-    private int row, col, piece, turn;
+    private int row, col, turn;
+    private int piece = -1;
     private HashMap<Character, Integer> mPMap;
 
     @Override
@@ -69,7 +70,10 @@ public class GameActivity extends ActionBarActivity {
         mPieceImages[8] = R.drawable.piece8;    mPieceImages[9] = R.drawable.piece9;    mPieceImages[10] = R.drawable.piece10;  mPieceImages[11] = R.drawable.piece11;
         mPieceImages[12] = R.drawable.piece12;  mPieceImages[13] = R.drawable.piece13;  mPieceImages[14] = R.drawable.piece14;  mPieceImages[15] = R.drawable.piece15;
 
-        mTurnMessages[0] = R.string.p1turnGive; mTurnMessages[1] = R.string.p2turnPlace; mTurnMessages[2] = R.string.p2turnGive; mTurnMessages[3] = R.string.p1turnPlace;
+        mTurnMessages[0] = R.string.p1turnGive;
+        mTurnMessages[1] = R.string.p2turnPlace;
+        mTurnMessages[2] = R.string.p2turnGive;
+        mTurnMessages[3] = R.string.p1turnPlace;
 
         mPMap.put('z', 0); mPMap.put('y', 1); mPMap.put('v', 2); mPMap.put('u', 3);
         mPMap.put('j', 4); mPMap.put('i', 5); mPMap.put('f', 6); mPMap.put('e', 7);
@@ -95,7 +99,7 @@ public class GameActivity extends ActionBarActivity {
                     public void onClick(View v) {
                         piece = innerI*4+innerJ;
                         showSelection();
-                        }
+                    }
                 });
             }
         }
