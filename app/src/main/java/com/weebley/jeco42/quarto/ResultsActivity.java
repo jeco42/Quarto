@@ -40,8 +40,8 @@ public class ResultsActivity extends ActionBarActivity{
         mBoard = new ImageView[4][4];
         mPieceImages = new int[16];
         mPMap = new HashMap<>();
-        index = -1;
         numMoves = moveHistory.length()/16;
+        index = numMoves-1;
         Log.d("test", "numMoves: " + numMoves);
         Log.d("test", moveHistory);
 
@@ -111,6 +111,8 @@ public class ResultsActivity extends ActionBarActivity{
         else{
             mWinnerTextview.setText(R.string.draw);
         }
+
+        showPosition();
     }
 
     private void showPosition() {
