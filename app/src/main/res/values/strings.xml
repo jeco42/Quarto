@@ -13,4 +13,6 @@
     <string name="p1wins">Player 1 Wins!</string>
     <string name="p2wins">Player 2 Wins!</string>
     <string name="draw">The game ends in a Draw!</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>

@@ -1,7 +1,9 @@
 package com.weebley.jeco42.quarto;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -17,20 +19,23 @@ import java.util.HashMap;
  */
 public class GameActivity extends ActionBarActivity {
 
-    private gameLogic mGame;
+    private static final String TAG = "GameActivity";
+    private static final String KEY_WINNER = "winner";
+    private static final String KEY_HISTORY = "history";
 
+    private gameLogic mGame;
     private ImageView[][] mBoardButtons;
     private ImageView[] mPieceButtons;
     private Button mGiveButton;
     private Button mPlaceButton;
     private ImageView mCurrentPieceView;
     private TextView mTurnView;
-
     private int[] mPieceImages;
     private int[] mTurnMessages;
-    private int row, col, turn;
+    private int row, col, turn, mWinner;
     private int piece = -1;
     private HashMap<Character, Integer> mPMap;
+    private String moveHistory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +51,9 @@ public class GameActivity extends ActionBarActivity {
         mPieceImages = new int[16];
         mTurnMessages = new int[4];
         mPMap = new HashMap<Character, Integer>();
+        moveHistory = "";
 
+        //The gameboard imageviews
         mBoardButtons[0][0] = (ImageView)findViewById(R.id.imageButton);      mBoardButtons[0][1] = (ImageView)findViewById(R.id.imageButton2);
         mBoardButtons[0][2] = (ImageView)findViewById(R.id.imageButton3);     mBoardButtons[0][3] = (ImageView)findViewById(R.id.imageButton4);
         mBoardButtons[1][0] = (ImageView)findViewById(R.id.imageButton5);     mBoardButtons[1][1] = (ImageView)findViewById(R.id.imageButton6);
@@ -56,6 +63,7 @@ public class GameActivity extends ActionBarActivity {
         mBoardButtons[3][0] = (ImageView)findViewById(R.id.imageButton13);    mBoardButtons[3][1] = (ImageView)findViewById(R.id.imageButton14);
         mBoardButtons[3][2] = (ImageView)findViewById(R.id.imageButton15);    mBoardButtons[3][3] = (ImageView)findViewById(R.id.imageButton16);
 
+        //The piece-pool imageviews
         mPieceButtons[0] = (ImageView)findViewById(R.id.imageButton17);   mPieceButtons[1] = (ImageView)findViewById(R.id.imageButton18);
         mPieceButtons[2] = (ImageView)findViewById(R.id.imageButton19);   mPieceButtons[3] = (ImageView)findViewById(R.id.imageButton20);
         mPieceButtons[4] = (ImageView)findViewById(R.id.imageButton21);   mPieceButtons[5] = (ImageView)findViewById(R.id.imageButton22);
@@ -65,6 +73,7 @@ public class GameActivity extends ActionBarActivity {
         mPieceButtons[12] = (ImageView)findViewById(R.id.imageButton29);  mPieceButtons[13] = (ImageView)findViewById(R.id.imageButton30);
         mPieceButtons[14] = (ImageView)findViewById(R.id.imageButton31);  mPieceButtons[15] = (ImageView)findViewById(R.id.imageButton32);
 
+        //The actual piece images.  These are placed into the gameboard and piece-pool imageviews
         mPieceImages[0] = R.drawable.piece0;    mPieceImages[1] = R.drawable.piece1;    mPieceImages[2] = R.drawable.piece2;    mPieceImages[3] = R.drawable.piece3;
         mPieceImages[4] = R.drawable.piece4;    mPieceImages[5] = R.drawable.piece5;    mPieceImages[6] = R.drawable.piece6;    mPieceImages[7] = R.drawable.piece7;
         mPieceImages[8] = R.drawable.piece8;    mPieceImages[9] = R.drawable.piece9;    mPieceImages[10] = R.drawable.piece10;  mPieceImages[11] = R.drawable.piece11;
@@ -118,7 +127,6 @@ public class GameActivity extends ActionBarActivity {
             }
         });
 
-
         mGame = new gameLogic();
         turn = 0;
         newGame();
@@ -164,15 +172,20 @@ public class GameActivity extends ActionBarActivity {
         if(check==1) {
             if (turn % 2 == 0) {
                 mTurnView.setText(R.string.p1wins);
+                mWinner = 1; //p1 won
             }
             else{
                 mTurnView.setText(R.string.p2wins);
+                mWinner = 2; //p2 won
             }
             //add logic to launch gameover screen
+            launchResults();
             return;
         }
         else if(check==2){
-            mTurnView.setText(R.string.p2wins);
+            mTurnView.setText(R.string.draw);
+            mWinner = 0; //draw
+            launchResults();
             return;
         }
 
@@ -198,6 +211,8 @@ public class GameActivity extends ActionBarActivity {
 
     private void placePiece(){
         if(mGame.place(piece, row, col)) {
+            moveHistory += mGame.getCurrentState();
+            Log.d("in gameActivity", moveHistory);
             mBoardButtons[row][col].setImageResource(mPieceImages[piece]);
             mPieceButtons[piece].setImageResource(R.drawable.blank);
             mCurrentPieceView.setImageResource(R.drawable.blank);
@@ -226,6 +241,15 @@ public class GameActivity extends ActionBarActivity {
             }
         }
         toggleTurn();
+    }
+
+    private void launchResults(){
+        //launch a results activity with the winner and move history
+        Intent i = new Intent(GameActivity.this, ResultsActivity.class);
+        i.putExtra(ResultsActivity.KEY_WINNER, mWinner);
+        i.putExtra(ResultsActivity.KEY_HISTORY, moveHistory);
+        finish();
+        startActivity(i);
     }
 
 }
