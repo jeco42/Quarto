@@ -1,6 +1,8 @@
 package com.weebley.jeco42.quarto;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.HashMap;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * Created by Justin on 4/3/2015.
@@ -101,6 +105,22 @@ public class GameActivity extends ActionBarActivity {
                     public void onClick(View v) {
                         row = innerI;
                         col = innerJ;
+                        //EXPERIMENTING WITH HIGHLIGHTING SELECTED SQUARE
+                        mBoardButtons[innerI][innerJ].getDrawable().setColorFilter(Color.parseColor("#B7B2B0"), PorterDuff.Mode.DARKEN);
+
+                        Timer t = new Timer();
+                        t.schedule(new TimerTask() {
+
+                            @Override
+                            public void run() {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        mBoardButtons[innerI][innerJ].getDrawable().clearColorFilter();
+                                    }
+                                });
+                            }
+                        }, 500);
                     }
                 });
                 mPieceButtons[i*4+j].setOnClickListener(new View.OnClickListener() {
