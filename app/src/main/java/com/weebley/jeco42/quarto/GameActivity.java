@@ -20,7 +20,7 @@ public class GameActivity extends ActionBarActivity {
     private gameLogic mGame;
 
     private ImageView[][] mBoardButtons;
-    private ImageButton[] mPieceButtons;
+    private ImageView[] mPieceButtons;
     private Button mGiveButton;
     private Button mPlaceButton;
     private ImageView mCurrentPieceView;
@@ -41,7 +41,7 @@ public class GameActivity extends ActionBarActivity {
         mCurrentPieceView = (ImageView)findViewById(R.id.current_piece);
         mTurnView = (TextView)findViewById(R.id.turn);
         mBoardButtons = new ImageView[4][4];
-        mPieceButtons = new ImageButton[16];
+        mPieceButtons = new ImageView[16];
         mPieceImages = new int[16];
         mTurnMessages = new int[4];
         mPMap = new HashMap<Character, Integer>();
@@ -55,14 +55,14 @@ public class GameActivity extends ActionBarActivity {
         mBoardButtons[3][0] = (ImageView)findViewById(R.id.imageButton13);    mBoardButtons[3][1] = (ImageView)findViewById(R.id.imageButton14);
         mBoardButtons[3][2] = (ImageView)findViewById(R.id.imageButton15);    mBoardButtons[3][3] = (ImageView)findViewById(R.id.imageButton16);
 
-        mPieceButtons[0] = (ImageButton)findViewById(R.id.imageButton17);   mPieceButtons[1] = (ImageButton)findViewById(R.id.imageButton18);
-        mPieceButtons[2] = (ImageButton)findViewById(R.id.imageButton19);   mPieceButtons[3] = (ImageButton)findViewById(R.id.imageButton20);
-        mPieceButtons[4] = (ImageButton)findViewById(R.id.imageButton21);   mPieceButtons[5] = (ImageButton)findViewById(R.id.imageButton22);
-        mPieceButtons[6] = (ImageButton)findViewById(R.id.imageButton23);   mPieceButtons[7] = (ImageButton)findViewById(R.id.imageButton24);
-        mPieceButtons[8] = (ImageButton)findViewById(R.id.imageButton25);   mPieceButtons[9] = (ImageButton)findViewById(R.id.imageButton26);
-        mPieceButtons[10] = (ImageButton)findViewById(R.id.imageButton27);  mPieceButtons[11] = (ImageButton)findViewById(R.id.imageButton28);
-        mPieceButtons[12] = (ImageButton)findViewById(R.id.imageButton29);  mPieceButtons[13] = (ImageButton)findViewById(R.id.imageButton30);
-        mPieceButtons[14] = (ImageButton)findViewById(R.id.imageButton31);  mPieceButtons[15] = (ImageButton)findViewById(R.id.imageButton32);
+        mPieceButtons[0] = (ImageView)findViewById(R.id.imageButton17);   mPieceButtons[1] = (ImageView)findViewById(R.id.imageButton18);
+        mPieceButtons[2] = (ImageView)findViewById(R.id.imageButton19);   mPieceButtons[3] = (ImageView)findViewById(R.id.imageButton20);
+        mPieceButtons[4] = (ImageView)findViewById(R.id.imageButton21);   mPieceButtons[5] = (ImageView)findViewById(R.id.imageButton22);
+        mPieceButtons[6] = (ImageView)findViewById(R.id.imageButton23);   mPieceButtons[7] = (ImageView)findViewById(R.id.imageButton24);
+        mPieceButtons[8] = (ImageView)findViewById(R.id.imageButton25);   mPieceButtons[9] = (ImageView)findViewById(R.id.imageButton26);
+        mPieceButtons[10] = (ImageView)findViewById(R.id.imageButton27);  mPieceButtons[11] = (ImageView)findViewById(R.id.imageButton28);
+        mPieceButtons[12] = (ImageView)findViewById(R.id.imageButton29);  mPieceButtons[13] = (ImageView)findViewById(R.id.imageButton30);
+        mPieceButtons[14] = (ImageView)findViewById(R.id.imageButton31);  mPieceButtons[15] = (ImageView)findViewById(R.id.imageButton32);
 
         mPieceImages[0] = R.drawable.piece0;    mPieceImages[1] = R.drawable.piece1;    mPieceImages[2] = R.drawable.piece2;    mPieceImages[3] = R.drawable.piece3;
         mPieceImages[4] = R.drawable.piece4;    mPieceImages[5] = R.drawable.piece5;    mPieceImages[6] = R.drawable.piece6;    mPieceImages[7] = R.drawable.piece7;
