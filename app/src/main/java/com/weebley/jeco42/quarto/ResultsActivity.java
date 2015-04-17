@@ -34,6 +34,9 @@ public class ResultsActivity extends ActionBarActivity{
 
         mWinner = getIntent().getIntExtra(KEY_WINNER, 0);
         moveHistory = getIntent().getStringExtra(KEY_HISTORY);
+
+        Log.d("winner", "received winner: " + mWinner);
+
         mBoard = new ImageView[4][4];
         mPieceImages = new int[16];
         mPMap = new HashMap<>();

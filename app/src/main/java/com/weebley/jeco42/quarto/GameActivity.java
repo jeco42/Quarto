@@ -170,13 +170,15 @@ public class GameActivity extends ActionBarActivity {
     private void toggleTurn(){
         int check = mGame.checkWinner();
         if(check==1) {
-            if (turn % 2 == 0) {
+            if (turn % 4 == 3) {
                 mTurnView.setText(R.string.p1wins);
                 mWinner = 1; //p1 won
+                Log.d("test1", "in p1 won condition: " + mWinner);
             }
             else{
                 mTurnView.setText(R.string.p2wins);
                 mWinner = 2; //p2 won
+                Log.d("test1", "in p2 won condition: " + mWinner);
             }
             //add logic to launch gameover screen
             launchResults();
@@ -200,26 +202,27 @@ public class GameActivity extends ActionBarActivity {
     }
 
     private void givePiece(){
-
-        if(mGame.canGive(piece)){
-            toggleTurn();
-        }
-        else{
-            //display toast for invalid piece selection..
+        if(turn%2 == 1) {
+            if (mGame.canGive(piece)) {
+                toggleTurn();
+            } else {
+                //display toast for invalid piece selection..
+            }
         }
     }
 
     private void placePiece(){
-        if(mGame.place(piece, row, col)) {
-            moveHistory += mGame.getCurrentState();
-            Log.d("in gameActivity", moveHistory);
-            mBoardButtons[row][col].setImageResource(mPieceImages[piece]);
-            mPieceButtons[piece].setImageResource(R.drawable.blank);
-            mCurrentPieceView.setImageResource(R.drawable.blank);
-            toggleTurn();
-        }
-        else{
-            //display a toast for illegal move
+        if(turn%2 == 0) {
+            if (mGame.place(piece, row, col)) {
+                moveHistory += mGame.getCurrentState();
+                Log.d("in gameActivity", moveHistory);
+                mBoardButtons[row][col].setImageResource(mPieceImages[piece]);
+                mPieceButtons[piece].setImageResource(R.drawable.blank);
+                mCurrentPieceView.setImageResource(R.drawable.blank);
+                toggleTurn();
+            } else {
+                //display a toast for illegal move
+            }
         }
 
     }
@@ -247,6 +250,7 @@ public class GameActivity extends ActionBarActivity {
         //launch a results activity with the winner and move history
         Intent i = new Intent(GameActivity.this, ResultsActivity.class);
         i.putExtra(ResultsActivity.KEY_WINNER, mWinner);
+        Log.d("winner?", "The winner was " + mWinner);
         i.putExtra(ResultsActivity.KEY_HISTORY, moveHistory);
         finish();
         startActivity(i);
