@@ -18,4 +18,6 @@
     <string name="history">Game Move History</string>
     <string name="rematch">Rematch!</string>
     <string name="quit">Quit</string>
+    <string name="new_game_string">New Game</string>
+    <string name="quit_game_string">Quit</string>
 </resources>

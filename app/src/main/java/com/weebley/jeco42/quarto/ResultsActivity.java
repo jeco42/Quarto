@@ -120,8 +120,8 @@ public class ResultsActivity extends ActionBarActivity{
             index = 0;
             return;
         }
-        else if(index >= numMoves){
-            index = numMoves;
+        else if(index == numMoves){
+            index = numMoves - 1;
             return;
         }
 
@@ -145,9 +145,7 @@ public class ResultsActivity extends ActionBarActivity{
     }
 
     private void quit(){
-        Intent i = new Intent(ResultsActivity.this, MainActivity.class);
         finish();
-        startActivity(i);
     }
 
 

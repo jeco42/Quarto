@@ -16,7 +16,6 @@ public class MainActivity extends ActionBarActivity {
 
     private void launchGame(){
         Intent i = new Intent(MainActivity.this, GameActivity.class);
-        finish();
         startActivity(i);
     }
 

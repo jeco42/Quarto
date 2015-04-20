@@ -6,6 +6,8 @@ import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -148,12 +150,53 @@ public class GameActivity extends ActionBarActivity {
         });
 
         mGame = new gameLogic();
-        turn = 0;
-        newGame();
+        hardReset();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putString("GAME_STATE", mGame.getCurrentState());
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+
+        String gameState = savedInstanceState.getString("GAME_STATE");
+        if (gameState != null) {
+            loadState(gameState);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_game, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.new_game) {
+            hardReset();
+            return true;
+        }
+
+        if (id == R.id.quit_game){
+            finish();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void loadState(String state){
-        newGame();         //reset the board first
+        hardReset();        //reset the board first
         mGame.loadState(state); //load state into the gameLogic object
 
         //Set board and picture pieces to reflect the state
@@ -163,6 +206,7 @@ public class GameActivity extends ActionBarActivity {
                 if(c != '_') {
                     mBoardButtons[i][j].setImageResource(mPieceImages[mPMap.get(c)]);
                     mPieceButtons[i*4+j].setImageResource(R.drawable.blank);
+                    toggleTurn();
                     toggleTurn();
                 }
             }
@@ -219,16 +263,22 @@ public class GameActivity extends ActionBarActivity {
             enableBoardPlacement();
         }
         turn = ++turn%4;
+        Log.d("GAME_LOGIC", "Turn: "+turn);
     }
 
     private void givePiece(){
         if(turn%2 == 1) {
             if (mGame.canGive(piece)) {
+                hidePiece();
                 toggleTurn();
             } else {
                 //display toast for invalid piece selection..
             }
         }
+    }
+
+    private void hidePiece(){
+        mPieceButtons[piece].setImageResource(R.drawable.blank);
     }
 
     private void placePiece(){
@@ -237,14 +287,12 @@ public class GameActivity extends ActionBarActivity {
                 moveHistory += mGame.getCurrentState();
                 Log.d("in gameActivity", moveHistory);
                 mBoardButtons[row][col].setImageResource(mPieceImages[piece]);
-                mPieceButtons[piece].setImageResource(R.drawable.blank);
                 mCurrentPieceView.setImageResource(R.drawable.blank);
                 toggleTurn();
             } else {
                 //display a toast for illegal move
             }
         }
-
     }
 
     private void showSelection(){
@@ -255,7 +303,7 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
-    private void newGame(){
+    private void softReset(){
         for(int i = 0; i < mBoardButtons.length; i++){
             for(int j = 0; j < mBoardButtons[i].length; j++){
                 //add drawable resources!
@@ -263,6 +311,13 @@ public class GameActivity extends ActionBarActivity {
                 mPieceButtons[i*4+j].setImageResource(mPieceImages[i*4+j]);
             }
         }
+    }
+
+    private void hardReset(){
+        softReset();
+        moveHistory = "";
+        mGame.resetBoard();
+        turn = 0;
         toggleTurn();
     }
 
@@ -275,5 +330,4 @@ public class GameActivity extends ActionBarActivity {
         finish();
         startActivity(i);
     }
-
 }

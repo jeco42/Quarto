@@ -1,5 +1,7 @@
 package com.weebley.jeco42.quarto;
 
+import android.util.Log;
+
 /**
  * Created by Justin on 4/3/2015.
  */
@@ -41,6 +43,7 @@ public class gameLogic {
         board[r][c] = pieces[p];
         round++;
         saveState();
+        Log.d("GAME_LOGIC", state);
         return true;
     }
 
@@ -70,13 +73,7 @@ public class gameLogic {
 
     public void loadState(String s){
         //reset game to new state
-        round = 0;
-        for(int i = 0; i < 4; i++){
-            for(int j = 0; j < 4; j++){
-                board[i][j] = 0;
-                played[i*4+j] = false;
-            }
-        }
+        resetBoard();
 
         //fill in board
         for(int i = 0; i < 4; i++){
@@ -92,7 +89,7 @@ public class gameLogic {
             }
         }
 
-
+        saveState();
     }
 
     public String saveState(){
@@ -112,8 +109,17 @@ public class gameLogic {
         return state;
     }
 
-    public String getCurrentState(){
-        return state;
+    public String getCurrentState(){ return state; }
+
+    public void resetBoard(){
+
+        round = 0;
+        for(int i = 0; i < 4; i++){
+            for(int j = 0; j < 4; j++){
+                board[i][j] = 0;
+                played[i*4+j] = false;
+            }
+        }
     }
 
 }
