@@ -234,7 +234,7 @@ public class GameActivity extends ActionBarActivity {
     private void toggleTurn(){
         int check = mGame.checkWinner();
         if(check==1) {
-            if (turn % 4 == 3) {
+            if (turn % 4 == 0) {
                 mTurnView.setText(R.string.p1wins);
                 mWinner = 1; //p1 won
                 Log.d("test1", "in p1 won condition: " + mWinner);
