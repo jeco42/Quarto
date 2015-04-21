@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
+              android:orientation="vertical"
+    android:background="@drawable/gamebg"
+    android:scaleType="fitXY">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -54,8 +56,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton"
                 android:background="@drawable/boardbackground" />
 
@@ -65,8 +67,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton2"
                 android:background="@drawable/boardbackground" />
 
@@ -76,8 +78,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton3"
                 android:background="@drawable/boardbackground" />
 
@@ -87,8 +89,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton4"
                 android:background="@drawable/boardbackground" />
 
@@ -143,8 +145,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton5"
                 android:background="@drawable/boardbackground" />
 
@@ -154,8 +156,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton6"
                 android:background="@drawable/boardbackground" />
 
@@ -165,8 +167,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton7"
                 android:background="@drawable/boardbackground" />
 
@@ -176,8 +178,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton8"
                 android:background="@drawable/boardbackground" />
 
@@ -232,8 +234,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton9"
                 android:background="@drawable/boardbackground" />
 
@@ -243,8 +245,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton10"
                 android:background="@drawable/boardbackground" />
 
@@ -254,8 +256,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton11"
                 android:background="@drawable/boardbackground" />
 
@@ -265,8 +267,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton12"
                 android:background="@drawable/boardbackground" />
 
@@ -321,8 +323,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton13"
                 android:background="@drawable/boardbackground" />
 
@@ -332,8 +334,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton14"
                 android:background="@drawable/boardbackground" />
 
@@ -343,8 +345,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton15"
                 android:background="@drawable/boardbackground" />
 
@@ -354,8 +356,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton16"
                 android:background="@drawable/boardbackground" />
 
@@ -406,21 +408,21 @@
         android:focusableInTouchMode="false">
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/give"
             android:id="@+id/give_button"
             android:layout_weight="1"/>
 
         <ImageView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:id="@+id/current_piece"
             android:layout_weight="1"
             android:src="@drawable/blank"/>
 
         <Button
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="@string/place"
             android:id="@+id/place_button"
@@ -433,12 +435,15 @@
         android:layout_height="wrap_content"
         android:text="@string/turn"
         android:id="@+id/turn"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffffff" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -447,38 +452,38 @@
             android:gravity="center_horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton17"
                 android:src="@drawable/piece0"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton18"
                 android:src="@drawable/piece1"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton19"
                 android:src="@drawable/piece2"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton20"
                 android:src="@drawable/piece3"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton21"
                 android:src="@drawable/piece4"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton22"
                 android:src="@drawable/piece5"/>
 
@@ -491,38 +496,38 @@
             android:gravity="center_horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton23"
                 android:src="@drawable/piece6"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton24"
                 android:src="@drawable/piece7"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton25"
                 android:src="@drawable/piece8"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton26"
                 android:src="@drawable/piece9"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton27"
                 android:src="@drawable/piece10"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton28"
                 android:src="@drawable/piece11"/>
 
@@ -535,26 +540,26 @@
             android:gravity="center_horizontal">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton29"
                 android:src="@drawable/piece12"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton30"
                 android:src="@drawable/piece13"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton31"
                 android:src="@drawable/piece14"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageButton32"
                 android:src="@drawable/piece15"/>
 

@@ -88,8 +88,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView"
                 android:background="@drawable/boardbackground"/>
 
@@ -99,8 +99,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView2"
                 android:background="@drawable/boardbackground"/>
 
@@ -110,8 +110,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView3"
                 android:background="@drawable/boardbackground"/>
 
@@ -121,8 +121,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView4"
                 android:background="@drawable/boardbackground"/>
 
@@ -175,8 +175,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView5"
                 android:background="@drawable/boardbackground"/>
 
@@ -186,8 +186,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView6"
                 android:background="@drawable/boardbackground"/>
 
@@ -197,8 +197,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView7"
                 android:background="@drawable/boardbackground"/>
 
@@ -208,8 +208,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView8"
                 android:background="@drawable/boardbackground"/>
 
@@ -262,8 +262,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView9"
                 android:background="@drawable/boardbackground"/>
 
@@ -273,8 +273,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView10"
                 android:background="@drawable/boardbackground"/>
 
@@ -284,8 +284,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView11"
                 android:background="@drawable/boardbackground"/>
 
@@ -295,8 +295,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView12"
                 android:background="@drawable/boardbackground"/>
 
@@ -349,8 +349,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView13"
                 android:background="@drawable/boardbackground"/>
 
@@ -360,8 +360,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView14"
                 android:background="@drawable/boardbackground"/>
 
@@ -371,8 +371,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView15"
                 android:background="@drawable/boardbackground"/>
 
@@ -382,8 +382,8 @@
                 android:src="@drawable/verticalbar"/>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
                 android:id="@+id/imageView16"
                 android:background="@drawable/boardbackground"/>
 
