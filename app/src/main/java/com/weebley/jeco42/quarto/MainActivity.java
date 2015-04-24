@@ -16,6 +16,9 @@ public class MainActivity extends ActionBarActivity {
 
     private void launchGame(){
         Intent i = new Intent(MainActivity.this, GameActivity.class);
+        //0 = 2 player, 1 = easy ai, 2 = hard ai...
+        // for now.. just hard coding 1 to test the ai
+        i.putExtra(GameActivity.KEY_MODE, 1);
         startActivity(i);
     }
 

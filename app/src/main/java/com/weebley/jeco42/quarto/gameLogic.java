@@ -1,6 +1,7 @@
 package com.weebley.jeco42.quarto;
 
 import android.util.Log;
+import java.util.Random;
 
 /**
  * Created by Justin on 4/3/2015.
@@ -16,12 +17,14 @@ public class gameLogic {
     private int gameover;
     private int round;
     private String state;
+    private Random rng;
 
     public gameLogic(){
         played = new boolean[16];
         board = new int[4][4];
         gameover = 0;
         round = 0;
+        rng = new Random();
 
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
@@ -112,7 +115,6 @@ public class gameLogic {
     public String getCurrentState(){ return state; }
 
     public void resetBoard(){
-
         round = 0;
         for(int i = 0; i < 4; i++){
             for(int j = 0; j < 4; j++){
@@ -120,6 +122,38 @@ public class gameLogic {
                 played[i*4+j] = false;
             }
         }
+    }
+
+    //calculates and easy AI level move and returns an array
+    //array contains the coordinates of where the computer placed the piece it was given
+    //and the pieceID of the piece being given to the player
+    public int[] easyAImove(int piece) {
+        int randRow, randCol, toGive;
+        boolean found = false;
+        int[] ret = new int[3];
+
+        //put the given piece in a random location
+        while(!found) {
+            randRow = rng.nextInt(4);
+            randCol = rng.nextInt(4);
+            if(board[randRow][randCol] == 0) {
+                ret[0] = randRow;
+                ret[1] = randCol;
+                found = true;
+            }
+        }
+
+        //select a random piece to give to player
+        found = false;
+        while(!found) {
+            toGive = rng.nextInt(16);
+            if(played[toGive]==false){
+                ret[2] = toGive;
+                found = true;
+            }
+        }
+
+        return ret;
     }
 
 }

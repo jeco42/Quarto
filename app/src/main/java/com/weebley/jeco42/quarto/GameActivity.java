@@ -28,6 +28,7 @@ public class GameActivity extends ActionBarActivity {
     private static final String TAG = "GameActivity";
     private static final String KEY_WINNER = "winner";
     private static final String KEY_HISTORY = "history";
+    public static final String KEY_MODE = "mode";
 
     private gameLogic mGame;
     private ImageView[][] mBoardButtons;
@@ -42,12 +43,15 @@ public class GameActivity extends ActionBarActivity {
     private int piece = -1;
     private HashMap<Character, Integer> mPMap;
     private String moveHistory;
+    private int mGameMode;
+    private int[] aiMove;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        mGameMode = getIntent().getIntExtra(KEY_MODE, 0);
         mGiveButton = (Button)findViewById(R.id.give_button);
         mPlaceButton = (Button)findViewById(R.id.place_button);
         mCurrentPieceView = (ImageView)findViewById(R.id.current_piece);
@@ -58,6 +62,7 @@ public class GameActivity extends ActionBarActivity {
         mTurnMessages = new int[4];
         mPMap = new HashMap<Character, Integer>();
         moveHistory = "";
+        aiMove = new int[3];
 
         //The gameboard imageviews
         mBoardButtons[0][0] = (ImageView)findViewById(R.id.imageButton);      mBoardButtons[0][1] = (ImageView)findViewById(R.id.imageButton2);
@@ -231,7 +236,7 @@ public class GameActivity extends ActionBarActivity {
         }
     }
 
-    private void toggleTurn(){
+    private void checkWinner() {
         int check = mGame.checkWinner();
         if(check==1) {
             if (turn % 4 == 0) {
@@ -254,15 +259,47 @@ public class GameActivity extends ActionBarActivity {
             launchResults();
             return;
         }
+    }
+
+    private void toggleTurn(){
+        checkWinner();
 
         mTurnView.setText(mTurnMessages[turn]);
-        if(turn%2 == 0){
-            enablePieceSelection();
+
+        if(mGameMode==0) {
+            if (turn % 2 == 0) {
+                enablePieceSelection();
+            } else {
+                enableBoardPlacement();
+            }
+            turn = ++turn % 4;
         }
-        else{
-            enableBoardPlacement();
+        else if(mGameMode==1){
+            if(turn % 4 == 0){
+                enablePieceSelection();
+                Log.d("GAME_LOGIC", "insde ==0: "+turn);
+                turn = ++turn%4;
+            }
+            else if(turn % 4 == 1){
+                aiMove = mGame.easyAImove(piece);
+                row = aiMove[0];
+                col = aiMove[1];
+                Log.d("GAME_LOGIC", "insde ==1: "+turn);
+                turn = ++turn%4;
+                aiPlacePiece();
+                checkWinner();
+                piece = aiMove[2];
+                turn = (turn+2)%4;
+                hidePiece();
+                showSelection();
+                enableBoardPlacement();
+            }
+            else{
+                enableBoardPlacement();
+                Log.d("GAME_LOGIC", "insde else: "+turn);
+                turn = ++turn%4;
+            }
         }
-        turn = ++turn%4;
         Log.d("GAME_LOGIC", "Turn: "+turn);
     }
 
@@ -280,6 +317,15 @@ public class GameActivity extends ActionBarActivity {
     private void hidePiece(){
         mPieceButtons[piece].setImageResource(R.drawable.blank);
     }
+
+    private void aiPlacePiece(){
+        mGame.place(piece, row, col);
+        moveHistory += mGame.getCurrentState();
+        Log.d("in  ai place", moveHistory);
+        mBoardButtons[row][col].setImageResource(mPieceImages[piece]);
+        mCurrentPieceView.setImageResource(R.drawable.blank);
+    }
+
 
     private void placePiece(){
         if(turn%2 == 0) {
