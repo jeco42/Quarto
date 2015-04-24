@@ -18,6 +18,7 @@ public class ResultsActivity extends ActionBarActivity{
 
     public static final String KEY_WINNER = "winner";
     public static final String KEY_HISTORY = "history";
+    public static final String KEY_MODE = "mode";
 
     private int mWinner, index, numMoves;
     private String moveHistory;
@@ -26,6 +27,7 @@ public class ResultsActivity extends ActionBarActivity{
     private ImageView[][] mBoard;
     private HashMap<Character, Integer> mPMap;
     private int[] mPieceImages;
+    private int mGameMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class ResultsActivity extends ActionBarActivity{
 
         mWinner = getIntent().getIntExtra(KEY_WINNER, 0);
         moveHistory = getIntent().getStringExtra(KEY_HISTORY);
+        mGameMode = getIntent().getIntExtra(KEY_MODE, 0);
 
         Log.d("winner", "received winner: " + mWinner);
 
@@ -140,6 +143,7 @@ public class ResultsActivity extends ActionBarActivity{
 
     private void rematch() {
         Intent i = new Intent(ResultsActivity.this, GameActivity.class);
+        i.putExtra(GameActivity.KEY_MODE, mGameMode);
         finish();
         startActivity(i);
     }

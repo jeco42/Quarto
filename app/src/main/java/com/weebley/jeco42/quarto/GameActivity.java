@@ -373,6 +373,7 @@ public class GameActivity extends ActionBarActivity {
         i.putExtra(ResultsActivity.KEY_WINNER, mWinner);
         Log.d("winner?", "The winner was " + mWinner);
         i.putExtra(ResultsActivity.KEY_HISTORY, moveHistory);
+        i.putExtra(ResultsActivity.KEY_MODE, mGameMode);
         finish();
         startActivity(i);
     }

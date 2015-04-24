@@ -12,13 +12,13 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity {
 
     private Button mPlayButton;
-    private Button mStatsButton;
+    private Button mEasyButton;
 
-    private void launchGame(){
+    private void launchGame(int mode){
         Intent i = new Intent(MainActivity.this, GameActivity.class);
         //0 = 2 player, 1 = easy ai, 2 = hard ai...
         // for now.. just hard coding 1 to test the ai
-        i.putExtra(GameActivity.KEY_MODE, 1);
+        i.putExtra(GameActivity.KEY_MODE, mode);
         startActivity(i);
     }
 
@@ -29,12 +29,18 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         mPlayButton = (Button)findViewById(R.id.play_button);
-        mStatsButton = (Button)findViewById(R.id.stats_button);
+        mEasyButton = (Button)findViewById(R.id.easy_button);
 
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launchGame();
+                launchGame(0);
+            }
+        });
+        mEasyButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchGame(1);
             }
         });
 

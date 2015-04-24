@@ -46,8 +46,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/stats"
-            android:id="@+id/stats_button"
+            android:text="@string/easy"
+            android:id="@+id/easy_button"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@color/button_material_light"
