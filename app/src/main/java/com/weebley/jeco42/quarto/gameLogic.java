@@ -147,7 +147,7 @@ public class gameLogic {
         found = false;
         while(!found) {
             toGive = rng.nextInt(16);
-            if(played[toGive]==false){
+            if(played[toGive]==false && toGive != piece){
                 ret[2] = toGive;
                 found = true;
             }

@@ -436,7 +436,6 @@
             android:layout_height="wrap_content"
             android:text="@string/previous"
             android:id="@+id/prev"
-            android:layout_gravity="center"
             android:textSize="30dp"
             android:layout_margin="20dp"/>
 

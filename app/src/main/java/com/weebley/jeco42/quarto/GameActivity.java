@@ -274,7 +274,7 @@ public class GameActivity extends ActionBarActivity {
             }
             turn = ++turn % 4;
         }
-        else if(mGameMode==1){
+        else{
             if(turn % 4 == 0){
                 enablePieceSelection();
                 Log.d("GAME_LOGIC", "insde ==0: "+turn);
@@ -293,6 +293,7 @@ public class GameActivity extends ActionBarActivity {
                 hidePiece();
                 showSelection();
                 enableBoardPlacement();
+                mTurnView.setText(mTurnMessages[3]);
             }
             else{
                 enableBoardPlacement();
@@ -300,6 +301,7 @@ public class GameActivity extends ActionBarActivity {
                 turn = ++turn%4;
             }
         }
+
         Log.d("GAME_LOGIC", "Turn: "+turn);
     }
 
